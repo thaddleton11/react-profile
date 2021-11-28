@@ -1,6 +1,23 @@
 import React, {Component} from "react";
 
-import {Button, Col, Collapse, Container, DropdownItem, DropdownMenu, DropdownToggle, Nav, Navbar, NavbarBrand, NavItem, NavLink, Row, UncontrolledDropdown, UncontrolledTooltip} from "reactstrap"
+import {
+    Button,
+    Col,
+    UncontrolledCollapse,
+    Collapse,
+    Container,
+    DropdownItem,
+    DropdownMenu,
+    DropdownToggle,
+    Nav,
+    Navbar,
+    NavbarBrand,
+    NavItem,
+    NavLink,
+    Row,
+    UncontrolledDropdown,
+    UncontrolledTooltip
+} from "reactstrap"
 import {Link} from "react-router-dom";
 import * as Scroll from 'react-scroll';
 
@@ -21,7 +38,23 @@ export default class THNavbar extends Component {
 
 
     render() {
-        const {collapseOpen, collapseOut, onCollapseExited, onCollapseExiting, scrollToDownload, toggleCollapse} = this.state;
+
+        const toggleCollapse = () => {
+            // document.documentElement.classList.toggle("nav-open");
+            this.setState({
+                collapseOpen: !this.state.collapseOpen
+            });
+        };
+        const onCollapseExiting = () => {
+            this.setState({
+                collapseOut: true
+            });
+        };
+        const onCollapseExited = () => {
+            this.setState({
+                collapseOut: false
+            });
+        };
 
         return (
             <Navbar className={"fixed-top"} expand={'lg'}>
@@ -34,45 +67,32 @@ export default class THNavbar extends Component {
                             <span className={'d-none d-sm-block'}>Web and Mobile Developer</span>
                         </NavbarBrand>
                         <button
-                            aria-expanded={collapseOpen}
-                            className="navbar-toggler navbar-toggler"
+                            aria-expanded={this.state.collapseOpen}
                             onClick={toggleCollapse}
+                            className="navbar-toggler"
+                            id="navbarNavDropdown"
+                            type="button"
                         >
                             <span className="navbar-toggler-bar bar1" />
                             <span className="navbar-toggler-bar bar2" />
                             <span className="navbar-toggler-bar bar3" />
                         </button>
                     </div>
-                    <Collapse
-                        className={"justify-content-end " + collapseOut}
-                        navbar
-                        isOpen={collapseOpen}
-                        onExiting={onCollapseExiting}
-                        onExited={onCollapseExited}
-                    >
-                        <div className="navbar-collapse-header">
-                            <Row>
-                                <Col className="collapse-brand" xs="6">
-                                    <a href="#pablo" onClick={(e) => e.preventDefault()}>
-                                        Tom Haddleton<i className={'fab fa-circle-thin'} />
-                                    </a>
-                                </Col>
-                                <Col className="collapse-close text-right" xs="6">
-                                    <button
-                                        aria-expanded={collapseOpen}
-                                        className="navbar-toggler"
-                                        onClick={toggleCollapse}
-                                    >
-                                        <i className="tim-icons icon-simple-remove" />
-                                    </button>
-                                </Col>
-                            </Row>
-                        </div>
+                    <UncontrolledCollapse navbar toggler="#navbarNavDropdown" className={"justify-content-end"}>
                         <Nav navbar>
+                            <button
+                                aria-expanded={this.state.collapseOpen}
+                                onClick={toggleCollapse}
+                                className="navbar-toggler text-white float-right"
+                                id="navbarNavDropdown"
+                                type="button"
+                            >
+                                <i className={'fa fa-times'} />
+                            </button>
                             <NavItem className="p-0">
                                 <NavLink
                                     data-placement="bottom"
-                                    href="github"
+                                    href="https://github.com/thaddleton11"
                                     rel="noopener noreferrer"
                                     target="_blank"
                                     title="GitHub Repo"
@@ -85,7 +105,7 @@ export default class THNavbar extends Component {
                             <NavItem className="p-0">
                                 <NavLink
                                     data-placement="bottom"
-                                    href="linkedin"
+                                    href="https://www.linkedin.com/in/tom-haddleton-34a70579"
                                     rel="noopener noreferrer"
                                     target="_blank"
                                     title="Visit my LinkedIn"
@@ -102,11 +122,19 @@ export default class THNavbar extends Component {
                                     href="#pablo"
                                     nav
                                     onClick={(e) => e.preventDefault()}
+                                    aria-expanded={false}
+                                    aria-haspopup={true}
                                 >
                                     <i className="fa fa-cogs d-lg-none d-xl-none" />
                                     Menu
                                 </DropdownToggle>
-                                <DropdownMenu className="dropdown-with-icons">
+                                <DropdownMenu className="dropdown-with-icons" aria-labelledby="navbarDropdownMenuLink">
+                                    <DropdownItem
+                                        href="#about"
+                                        className={"navbar-toggler"}
+                                        >
+                                        Hello
+                                    </DropdownItem>
                                     <Slink to="about" spy={true} smooth={true} offset={-50}>
                                         <DropdownItem tag={'div'}>
                                             <i className="tim-icons icon-paper" />
@@ -147,7 +175,8 @@ export default class THNavbar extends Component {
                                 </DropdownMenu>
                             </UncontrolledDropdown>
                         </Nav>
-                    </Collapse>
+                    </UncontrolledCollapse>
+
 
                 </Container>
             </Navbar>

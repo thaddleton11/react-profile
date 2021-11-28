@@ -45,15 +45,15 @@ export default function Footer() {
                                     Home
                                 </NavLink>
                             </NavItem>
-                            <NavItem>
+                            {/*<NavItem>
                                 <NavLink to="/landing-page" tag={Link}>
                                     Examples
                                 </NavLink>
-                            </NavItem>
+                            </NavItem>*/}
                         </Nav>
                     </Col>
                     <Col md="3">
-                        <Nav>
+                        {/*<Nav>
                             <NavItem>
                                 <NavLink href="https://creative-tim.com/contact-us?ref=blkdsr-footer">
                                     Example 1
@@ -74,7 +74,7 @@ export default function Footer() {
                                     Example 4
                                 </NavLink>
                             </NavItem>
-                        </Nav>
+                        </Nav>*/}
                     </Col>
                     <Col md="3">
                         <h3 className="title">See more of me:</h3>
@@ -82,7 +82,7 @@ export default function Footer() {
                             <Button
                                 className="btn-icon btn-neutral btn-round btn-simple"
                                 color="default"
-                                href="https://twitter.com/creativetim"
+                                href="https://github.com/thaddleton11"
                                 id="tooltip622135962"
                                 target="_blank"
                             >
@@ -94,7 +94,7 @@ export default function Footer() {
                             <Button
                                 className="btn-icon btn-neutral btn-round btn-simple"
                                 color="default"
-                                href="https://www.facebook.com/creativetim"
+                                href="https://www.linkedin.com/in/tom-haddleton-34a70579"
                                 id="tooltip230450801"
                                 target="_blank"
                             >

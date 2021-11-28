@@ -77,7 +77,7 @@ export default class API extends Component {
 
                     })
                 })
-        }, 800, self)
+        }, 600, self)
 
 
     }
@@ -112,7 +112,7 @@ export default class API extends Component {
 
 
         return (
-            <Col>
+            <Col className={'d-flex'}>
                 <div className={'card card-coin card-plain'}>
                     <div className={'card-body'}>
                         <h3 className={'text-center'}>{props.name}</h3>
