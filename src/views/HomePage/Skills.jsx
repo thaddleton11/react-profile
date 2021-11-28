@@ -108,7 +108,7 @@ export default class Skills extends Component {
                                     </div>
                                     <h4 className={'info-title'}>Server Software</h4>
                                     <hr className={'line-primary'} />
-                                    <p>Clear understanding of Apache, phpMyAdmin, Samba, web hosting on Debian based operating systems. Experience of cPanel and WHM</p>
+                                    <p>Clear understanding of Apache, phpMyAdmin, Samba, web hosting on Debian based operating systems. Experience of load balancers, virtual machines, cPanel and WHM</p>
                                 </div>
                             </Col>
                             <Col lg={3} md={4}>
@@ -128,7 +128,7 @@ export default class Skills extends Component {
                                     </div>
                                     <h4 className={'info-title'}>Development Software</h4>
                                     <hr className={'line-primary'} />
-                                    <p>PHPStorm IDE, Android Studio, XCode, GIMP and SourceTree</p>
+                                    <p>PHPStorm IDE, Android Studio, XCode, GIMP, Postman and SourceTree</p>
                                 </div>
                             </Col>
                             <Col lg={3} md={4}>
@@ -148,7 +148,7 @@ export default class Skills extends Component {
                                     </div>
                                     <h4 className={'info-title'}>Operating Systems</h4>
                                     <hr className={'line-primary'} />
-                                    <p>Familiar with Microsoft Windows, Debian based Linux systems, OSX</p>
+                                    <p>Very familiar with Microsoft Windows, Debian based Linux systems, OSX</p>
                                 </div>
                             </Col>
                         </Row>

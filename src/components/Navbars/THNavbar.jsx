@@ -129,12 +129,6 @@ export default class THNavbar extends Component {
                                     Menu
                                 </DropdownToggle>
                                 <DropdownMenu className="dropdown-with-icons" aria-labelledby="navbarDropdownMenuLink">
-                                    <DropdownItem
-                                        href="#about"
-                                        className={"navbar-toggler"}
-                                        >
-                                        Hello
-                                    </DropdownItem>
                                     <Slink to="about" spy={true} smooth={true} offset={-50}>
                                         <DropdownItem tag={'div'}>
                                             <i className="tim-icons icon-paper" />
